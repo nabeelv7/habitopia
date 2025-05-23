@@ -67,8 +67,14 @@
     <a href="#reviews" class="link link-hover" onclick={() => (isOpen = false)}
       >Reviews</a
     >
-    <button class="btn btn-secondary mt-4" onclick={() => (isOpen = false)}>
-      Build Habits <ArrowRight size={15} />
-    </button>
+    <div>
+      <div class="divider"></div>
+      <button
+        class="btn btn-secondary mt-4 w-full"
+        onclick={() => (isOpen = false)}
+      >
+        Build Habits <ArrowRight size={15} />
+      </button>
+    </div>
   </div>
 </div>
