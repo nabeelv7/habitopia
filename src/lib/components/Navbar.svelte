@@ -1,55 +1,74 @@
-<nav class="navbar bg-base-100 shadow-sm">
-  <div class="navbar-start">
-    <div class="dropdown">
-      <div tabindex="0" role="button" class="btn btn-ghost lg:hidden">
-        <svg
-          xmlns="http://www.w3.org/2000/svg"
-          class="h-5 w-5"
-          fill="none"
-          viewBox="0 0 24 24"
-          stroke="currentColor"
-        >
-          <path
-            stroke-linecap="round"
-            stroke-linejoin="round"
-            stroke-width="2"
-            d="M4 6h16M4 12h8m-8 6h16"
-          />
-        </svg>
-      </div>
-      <ul
-        tabindex="0"
-        class="menu menu-sm dropdown-content bg-base-100 rounded-box z-1 mt-3 w-52 p-2 shadow"
-      >
-        <li><a>Item 1</a></li>
-        <li>
-          <a>Parent</a>
-          <ul class="p-2">
-            <li><a>Submenu 1</a></li>
-            <li><a>Submenu 2</a></li>
-          </ul>
-        </li>
-        <li><a>Item 3</a></li>
-      </ul>
-    </div>
-    <a href="/" class="btn btn-ghost text-xl">Habitopia</a>
+<script>
+  import { ArrowRight } from "@lucide/svelte";
+  import { Menu } from "@lucide/svelte";
+  import { X } from "@lucide/svelte";
+
+  let isOpen = $state(false);
+</script>
+
+<!-- Desktop Navbar -->
+<nav
+  class="w-full hidden md:flex items-center justify-between border-b border-neutral/20 bg-base-200 py-4 md:px-8 px-5"
+>
+  <a href="/" class="text-xl font-bold flex gap-2">
+    <span class="text-2xl">🐵</span> Habitopia
+  </a>
+  <div class="flex gap-6 items-center">
+    <a href="#pricing" class="link link-hover">Pricing</a>
+    <a href="#faq" class="link link-hover">FAQ</a>
+    <a href="#reviews" class="link link-hover">Reviews</a>
   </div>
-  <div class="navbar-center hidden lg:flex">
-    <ul class="menu menu-horizontal px-1">
-      <li><a>Item 1</a></li>
-      <li>
-        <details>
-          <summary>Parent</summary>
-          <ul class="p-2">
-            <li><a>Submenu 1</a></li>
-            <li><a>Submenu 2</a></li>
-          </ul>
-        </details>
-      </li>
-      <li><a>Item 3</a></li>
-    </ul>
-  </div>
-  <div class="navbar-end">
-    <a class="btn">Button</a>
-  </div>
+  <button class="btn btn-secondary">
+    Build Habits <ArrowRight size={15} />
+  </button>
 </nav>
+<!-- Mobile Navbar -->
+<nav
+  class="w-full md:hidden flex items-center justify-between bg-base-200 py-4 px-5 border-b border-neutral/20"
+>
+  <!-- Logo -->
+  <a href="/" class="text-xl font-bold flex gap-2">
+    <span class="text-2xl">🐵</span> Habitopia
+  </a>
+
+  <!-- Hamburger Button -->
+  <button aria-label="open menu" onclick={() => (isOpen = !isOpen)}>
+    <Menu />
+  </button>
+</nav>
+
+<!-- Mobile Fullscreen Drawer -->
+<div
+  class={`fixed top-0 left-0 w-full h-full bg-base-100 z-50 ${
+    isOpen ? "translate-x-0" : "-translate-x-full"
+  }`}
+>
+  <div
+    class="flex items-center justify-between px-5 py-4 border-b border-neutral/20 bg-base-200"
+  >
+    <!-- Logo -->
+    <a href="/" class="text-xl font-bold flex gap-2">
+      <span class="text-2xl">🐵</span> Habitopia
+    </a>
+    <!-- Close Button -->
+    <button aria-label="close menu" onclick={() => (isOpen = false)}>
+      <X />
+    </button>
+  </div>
+
+  <!-- Mobile Links -->
+  <div class="flex flex-col gap-6 mt-10 text-lg px-5">
+    <a href="#pricing" class="link link-hover" onclick={() => (isOpen = false)}
+      >Pricing</a
+    >
+    <a href="#faq" class="link link-hover" onclick={() => (isOpen = false)}
+      >FAQ</a
+    >
+    <a href="#reviews" class="link link-hover" onclick={() => (isOpen = false)}
+      >Reviews</a
+    >
+    <button class="btn btn-secondary mt-4" onclick={() => (isOpen = false)}>
+      Build Habits <ArrowRight size={15} />
+    </button>
+  </div>
+</div>
