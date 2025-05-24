@@ -18,9 +18,9 @@
     <a href="#faq" class="link link-hover">FAQ</a>
     <a href="#reviews" class="link link-hover">Reviews</a>
   </div>
-  <button class="btn btn-secondary">
-    Build Habits <ArrowRight size={15} />
-  </button>
+  <a href="/login" class="btn btn-accent">
+    Sign in <ArrowRight size={15} />
+  </a>
 </nav>
 <!-- Mobile Navbar -->
 <nav
@@ -69,12 +69,13 @@
     >
     <div>
       <div class="divider"></div>
-      <button
+      <a
+        href="/login"
         class="btn btn-secondary mt-4 w-full"
         onclick={() => (isOpen = false)}
       >
-        Build Habits <ArrowRight size={15} />
-      </button>
+        Sign in <ArrowRight size={15} />
+      </a>
     </div>
   </div>
 </div>
