@@ -14,7 +14,7 @@
   <div
     class="flex relative w-full min-h-screen md:w-1/2 justify-center items-center px-6 py-12 bg-accent"
     >
-    <BackButton href="/" styles="absolute top-10 left-10" />
+    <BackButton href="/" styles="absolute top-10 left-6" />
     <div class="w-full py-10 max-w-md rounded-xl space-y-8 bg-base-100">
       <div class="flex flex-col justify-center items-center gap-4">
         <h1 class="text-4xl font-bold">🐵 Habitopia</h1>
