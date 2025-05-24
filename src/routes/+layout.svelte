@@ -2,7 +2,6 @@
   import { afterNavigate, beforeNavigate } from "$app/navigation";
   import NProgress from "nprogress";
   import "nprogress/nprogress.css";
-  import Navbar from "$lib/components/Navbar.svelte";
   import "../app.css";
 
   let { data, children } = $props();
@@ -23,5 +22,4 @@
   });
 </script>
 
-<Navbar />
 {@render children()}

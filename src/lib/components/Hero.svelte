@@ -9,7 +9,7 @@
     Crush bad habits, stack wins ✨, and build your very own zoo of awesome
     animals 🐒🐅🦜
   </p>
-  <button class="btn btn-secondary mt-8 btn-xl">Crush Bad Habits</button>
+  <a href="/login" class="btn btn-secondary mt-8 btn-xl">Crush Bad Habits</a>
   <!-- iframe -->
   <div
     class="relative w-full max-w-4xl mt-20 md:rounded-3xl rounded-md aspect-video overflow-hidden mx-auto"
