@@ -12,6 +12,6 @@
 }
 
 #nprogress .bar {
-  background: cyan !important; /* purple-600 or any Tailwind color */
-  height: 4px !important; /* change thickness */
+  background: #f61b00 !important; /* purple-600 or any Tailwind color */
+  height: 5px !important; /* change thickness */
 }
